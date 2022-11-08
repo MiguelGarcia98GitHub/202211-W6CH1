@@ -3,7 +3,6 @@ import { MemoryRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import { appStore } from "../../store/store";
 import { Sample } from "./Sample";
-import userEvent from "@testing-library/user-event";
 
 describe("Given the Sample component", () => {
     test("when we click on the button, it should execute the button associated functionalities", async () => {
