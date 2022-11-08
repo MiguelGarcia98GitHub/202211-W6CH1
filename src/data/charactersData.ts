@@ -12,6 +12,7 @@ export const charactersData: Array<ICharacter> = [
         customMessage: "Vais a morir todos",
     },
     {
+        id: 2,
         name: "Jaime",
         family: "Lannister",
         age: 40,

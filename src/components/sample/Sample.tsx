@@ -13,10 +13,10 @@ export function Sample() {
     }, [dispatcher]);
 
     return (
-        <>
+        <ul>
             {characters.map((item) => (
-                <p key={item.id}>{item.name}</p>
+                <li key={item.id}>{item.name}</li>
             ))}
-        </>
+        </ul>
     );
 }
