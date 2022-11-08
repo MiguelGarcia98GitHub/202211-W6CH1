@@ -61,7 +61,8 @@
     },
     "jest": {
         "coveragePathIgnorePatterns": [
-            "index.jsx"
+            "<rootDir>/src/index.tsx",
+            "<rootDir>/src/reportWebVitals.js"
         ]
     }
 }

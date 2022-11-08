@@ -15,7 +15,33 @@ export function Sample() {
     return (
         <ul>
             {characters.map((item) => (
-                <li key={item.id}>{item.name}</li>
+                <li>
+                    <div key={item.id}>
+                        {item.name} is currently{" "}
+                        {item.status ? "alive" : "dead"}{" "}
+                    </div>
+                    <button
+                        onClick={() => {
+                            dispatcher(ac.deleteActionCreator(item));
+                        }}
+                    >
+                        DELETE CHARACTER {item.id}
+                    </button>
+                    <input
+                        type="checkbox"
+                        name="alivecheck"
+                        id="alivecheck"
+                        onChange={() => {
+                            dispatcher(
+                                ac.updateActionCreator({
+                                    ...item,
+                                    status: !item.status,
+                                })
+                            );
+                        }}
+                    />
+                    change status
+                </li>
             ))}
         </ul>
     );

@@ -20,7 +20,6 @@ export const Form = () => {
                             age: 50,
                             status: true,
                             imageURL: "./pepe.jpg",
-                            id: Math,
                         });
                     }}
                 />
