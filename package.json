@@ -19,6 +19,7 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.4.2",
+        "react-redux": "^8.0.5",
         "react-scripts": "5.0.1",
         "redux": "^4.2.0",
         "sass": "^1.55.0",
@@ -60,7 +61,8 @@
     },
     "jest": {
         "coveragePathIgnorePatterns": [
-            "index.jsx"
+            "<rootDir>/src/index.tsx",
+            "<rootDir>/src/reportWebVitals.js"
         ]
     }
 }
