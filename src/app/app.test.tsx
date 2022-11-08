@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter as Router } from "react-router-dom";
+import { appStore } from "../store/store";
+import { Provider } from "react-redux";
 import App from "./App";
 
 describe("Given App component", () => {
@@ -7,7 +9,9 @@ describe("Given App component", () => {
         test("Then it should display the title", () => {
             render(
                 <Router>
-                    <App />
+                    <Provider store={appStore}>
+                        <App />
+                    </Provider>
                 </Router>
             );
 
