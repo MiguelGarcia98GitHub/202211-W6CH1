@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useCharacters } from "../../hooks/useCharacters";
 import { ICharacter } from "../../models/character";
-import * as ac from "../../reducer/action.creator";
 
 export const Form = () => {
+    const { handleAdd } = useCharacters();
+
     const [character, setCharacter] = useState({});
-    const dispatcher = useDispatch();
 
     return (
         <div>
@@ -30,11 +30,9 @@ export const Form = () => {
                             ...character,
                             id: Math.floor(Math.random() * 10000),
                         });
-                        dispatcher(
-                            ac.addActionCreator({
-                                ...(character as ICharacter),
-                            })
-                        );
+                        handleAdd({
+                            ...(character as ICharacter),
+                        });
                     }}
                 >
                     ADD CHARACTER
