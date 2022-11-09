@@ -3,7 +3,7 @@ import { Repository } from "./repository";
 
 export class CharacterRepository implements Repository<ICharacter> {
     url: string;
-    constructor(url = "http://localhost:3000/characters") {
+    constructor(url = "") {
         this.url = url ? url : (process.env.REACT_APP_URL_CHARACTERS as string);
     }
 
