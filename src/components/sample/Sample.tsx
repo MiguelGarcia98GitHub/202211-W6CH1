@@ -1,28 +1,19 @@
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { rootState } from "../../store/store";
-import * as ac from "../../reducer/action.creator";
-import { charactersData } from "../../data/charactersData";
+import { useCharacters } from "../../hooks/useCharacters";
 
 export function Sample() {
-    const characters = useSelector((state: rootState) => state.characters);
-    const dispatcher = useDispatch();
-
-    useEffect(() => {
-        dispatcher(ac.loadActionCreator(charactersData));
-    }, [dispatcher]);
+    const { characters, handleDelete, handleUpdate } = useCharacters();
 
     return (
         <ul>
             {characters.map((item) => (
-                <li>
+                <li key={item.id}>
                     <div key={item.id}>
                         {item.name} is currently{" "}
                         {item.status ? "alive" : "dead"}{" "}
                     </div>
                     <button
                         onClick={() => {
-                            dispatcher(ac.deleteActionCreator(item));
+                            handleDelete(item);
                         }}
                     >
                         DELETE CHARACTER {item.id}
@@ -32,12 +23,10 @@ export function Sample() {
                         name="alivecheck"
                         id="alivecheck"
                         onChange={() => {
-                            dispatcher(
-                                ac.updateActionCreator({
-                                    ...item,
-                                    status: !item.status,
-                                })
-                            );
+                            handleUpdate({
+                                ...item,
+                                status: !item.status,
+                            });
                         }}
                     />
                     change status

@@ -1,0 +1,23 @@
+{
+    "characters": [
+        {
+            "id": 2,
+            "name": "Jaime",
+            "family": "Lannister",
+            "age": 40,
+            "status": true,
+            "imageURL": "./jaime.jpg",
+            "weapon": "sword",
+            "dexterity": 8,
+            "customMessage": "Primero golpeo y luego pregunto"
+        },
+        {
+            "name": "Garfunkel",
+            "family": "Los Pepes",
+            "age": 50,
+            "status": true,
+            "imageURL": "./pepe.jpg",
+            "id": 3
+        }
+    ]
+}
