@@ -3,7 +3,9 @@ import { Repository } from "./repository";
 
 export class CharacterRepository implements Repository<ICharacter> {
     url: string;
-    constructor(url = "") {
+    constructor(
+        url = "https://gotreduxbackend-production.up.railway.app/characters"
+    ) {
         this.url = url ? url : (process.env.REACT_APP_URL_CHARACTERS as string);
     }
 
