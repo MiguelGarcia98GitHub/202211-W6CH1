@@ -26,7 +26,7 @@ describe("Given the Sample component", () => {
             name: "DELETE CHARACTER 1",
         });
 
-        fireEvent.click(button1);
+        await fireEvent.click(button1);
     });
     test("when we click the checkbox, it should execute the checkbox associated functionalities", async () => {
         render(
@@ -36,7 +36,8 @@ describe("Given the Sample component", () => {
                 </Provider>
             </Router>
         );
+
         const checkboxList = await screen.findAllByRole("checkbox");
-        fireEvent.click(checkboxList[0]);
+        await fireEvent.click(checkboxList[0]);
     });
 });
